@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.GlobalRiemannianGeometryPinchingCanonicalLaneLean.PinchedManifoldLayer
+import HautevilleHouse.GlobalRiemannianGeometryPinchingCanonicalLaneLean.RicciFlowPDE
+import HautevilleHouse.GlobalRiemannianGeometryPinchingCanonicalLaneLean.PerelmanEntropy
+import HautevilleHouse.GlobalRiemannianGeometryPinchingCanonicalLaneLean.DiameterEstimate
+
+namespace HautevilleHouse
+namespace GlobalRiemannianGeometryPinchingCanonicalLaneLean
+
+def ConstrainedSphereTheoremClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_sphere_theorem_endgame (A : AdmissibleClass) :
+    ConstrainedSphereTheoremClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GlobalRiemannianGeometryPinchingCanonicalLaneLean
+end HautevilleHouse
